@@ -1,0 +1,56 @@
+rules_version = '2';
+
+// ============================================================
+// Condor Sky — Reglas de seguridad Firestore
+// Proyecto: caidalibre-prod  ·  v2 (modelo unificado)
+//
+// Contenido y disponibilidad: lectura pública, escritura admin.
+// bookings (PII): creación solo backend, acceso solo admin.
+// ============================================================
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function isSignedIn() { return request.auth != null; }
+    function isAdmin() { return isSignedIn() && request.auth.token.admin == true; }
+
+    // ---------- Contenido (lee el sitio, escribe el panel) ----------
+    match /services/{id}      { allow read: if true; allow write: if isAdmin(); }
+    match /additionals/{id}   { allow read: if true; allow write: if isAdmin(); }
+    match /testimonials/{id}  { allow read: if true; allow write: if isAdmin(); }
+    match /gallery/{id}       { allow read: if true; allow write: if isAdmin(); }
+    match /settings/{doc}     { allow read: if true; allow write: if isAdmin(); }
+
+    // ---------- Disponibilidad (lee el sitio, escribe el panel) ----------
+    match /blocked/{sede}/dates/{date}      { allow read: if true; allow write: if isAdmin(); }
+    match /availability/{sede}/slots/{date} { allow read: if true; allow write: if isAdmin(); }
+
+    // ---------- Reservas (PII) ----------
+    match /bookings/{id} {
+      // Creación solo desde la Cloud Function `crearBooking` (Admin SDK).
+      allow create: if false;
+      // Lectura, edición y borrado: solo admin desde el panel.
+      allow read, update, delete: if isAdmin();
+    }
+
+    // ---------- Auditoría de pagos ----------
+    match /pagos/{id} {
+      allow read: if isAdmin();
+      allow write: if false; // solo el backend (Admin SDK)
+    }
+
+    // ---------- Eventos Bold (idempotencia + auditoría del webhook) ----------
+    match /boldEvents/{id} {
+      allow read: if isAdmin();
+      allow write: if false; // solo el backend (Admin SDK desde boldWebhook)
+    }
+
+    // ---------- Secretos (SOLO backend — ni el cliente ni un admin lo leen) ----------
+    // La llave secreta de Bold vive aquí. `if false` significa que NINGÚN
+    // navegador la lee; solo el Admin SDK de las Cloud Functions la alcanza.
+    match /secrets/{doc} { allow read, write: if false; }
+
+    // ---------- Cierre por defecto ----------
+    match /{document=**} { allow read, write: if false; }
+  }
+}

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemaps-image/1.1">
+  <url>
+    <loc>https://condorsky.co/</loc>
+    <lastmod>2026-08-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://condorsky.co/img/vuelo-2.jpg</image:loc>
+      <image:title>Salto tándem de paracaidismo en Condor Sky</image:title>
+      <image:caption>Vista aérea durante un salto tándem en Colombia</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://condorsky.co/img/sede-bogota.jpg</image:loc>
+      <image:title>Paracaidismo en Bogotá — Condor Sky</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://condorsky.co/img/sede-cali.jpg</image:loc>
+      <image:title>Paracaidismo en Cali — Condor Sky</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://condorsky.co/img/sede-medellin.jpg</image:loc>
+      <image:title>Paracaidismo en Medellín — Condor Sky</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://condorsky.co/img/sede-bucaramanga.jpg</image:loc>
+      <image:title>Paracaidismo en Bucaramanga — Condor Sky</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://condorsky.co/img/sede-santamarta.jpg</image:loc>
+      <image:title>Paracaidismo en Santa Marta — Condor Sky</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://condorsky.co/img/paq-esencial.jpg</image:loc>
+      <image:title>Paquete Esencial — Condor Sky</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://condorsky.co/img/paq-plus.jpg</image:loc>
+      <image:title>Paquete PLUS HD — Condor Sky</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://condorsky.co/img/paq-pro.jpg</image:loc>
+      <image:title>Paquete Pro Experience — Condor Sky</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://condorsky.co/img/paq-trio.jpg</image:loc>
+      <image:title>Paquete Full Experience Trío — Condor Sky</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://condorsky.co/reservar</loc>
+    <lastmod>2026-08-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://condorsky.co/privacidad</loc>
+    <lastmod>2026-08-13</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://condorsky.co/terminos</loc>
+    <lastmod>2026-08-13</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+</urlset>

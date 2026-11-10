@@ -1,0 +1,28 @@
+# Dependencias y build
+node_modules/
+dist/
+
+# Variables de entorno y secretos
+.env
+.env.*
+!/functions/.env.example
+*.local
+
+# Firebase
+.firebase/
+firebase-debug.log
+functions/node_modules/
+functions/.env
+
+# Service account JSONs — NUNCA comitear
+scripts/sa-key.json
+scripts/*-firebase-adminsdk-*.json
+*-service-account.json
+
+# OS
+.DS_Store
+
+
+.emulators.log
+*.log
+!.env.example

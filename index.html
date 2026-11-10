@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="es-CO">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0b1b2b" />
+
+    <title>Condor Sky — Paracaidismo Tándem en Bogotá, Cali, Medellín, Bucaramanga y Santa Marta</title>
+    <meta name="description" content="Vuela como el cóndor: paracaidismo tándem en Colombia con instructores certificados USPA, equipo profesional y 5 sedes: Bogotá, Cali, Medellín, Bucaramanga y Santa Marta. Reagenda gratis hasta 48h antes." />
+    <meta name="author" content="Condor Sky" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href="https://condorsky.co/" />
+
+    <!-- Fuentes de marca desde el head (antes @import por página): descubrimiento
+         temprano → mejor LCP. Space Grotesk (display) + Manrope (body). -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" />
+
+    <!-- Preload de la imagen hero para mejor LCP -->
+    <link rel="preload" as="image" href="/img/jumps.jpg" fetchpriority="high" />
+
+    <!-- Iconos -->
+    <link rel="icon" type="image/svg+xml" href="/img/logo-condorsky.svg" />
+    <link rel="apple-touch-icon" href="/img/logo-condorsky.svg" />
+
+    <!-- Open Graph (WhatsApp, Facebook, LinkedIn) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_CO" />
+    <meta property="og:site_name" content="Condor Sky" />
+    <meta property="og:title" content="Condor Sky — Paracaidismo Tándem" />
+    <meta property="og:description" content="Vuela como el cóndor: paracaidismo tándem en Colombia. 5 sedes, instructores certificados USPA. Reagenda gratis hasta 48h antes." />
+    <meta property="og:url" content="https://condorsky.co/" />
+    <meta property="og:image" content="https://condorsky.co/img/vuelo-2.jpg" />
+    <meta property="og:image:width" content="1600" />
+    <meta property="og:image:height" content="900" />
+    <meta property="og:image:alt" content="Salto tándem de paracaidismo con Condor Sky" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Condor Sky — Paracaidismo Tándem" />
+    <meta name="twitter:description" content="Paracaidismo tándem en 5 sedes de Colombia. Instructores USPA. Reagenda gratis 48h." />
+    <meta name="twitter:image" content="https://condorsky.co/img/vuelo-2.jpg" />
+
+    <!-- ============================================
+         JSON-LD · LocalBusiness
+         ============================================ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "@id": "https://condorsky.co/#business",
+      "name": "Condor Sky",
+      "image": "https://condorsky.co/img/vuelo-2.jpg",
+      "logo": "https://condorsky.co/img/logo-condorsky.svg",
+      "url": "https://condorsky.co/",
+      "telephone": "+57 318 028 2425",
+      "priceRange": "$$",
+      "description": "Paracaidismo tándem con instructores certificados USPA en 5 sedes de Colombia: Bogotá, Cali, Medellín, Bucaramanga y Santa Marta.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "CO"
+      },
+      "areaServed": [
+        { "@type": "City", "name": "Bogotá" },
+        { "@type": "City", "name": "Cali" },
+        { "@type": "City", "name": "Medellín" },
+        { "@type": "City", "name": "Bucaramanga" },
+        { "@type": "City", "name": "Santa Marta" }
+      ],
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+        "opens": "07:00",
+        "closes": "19:00"
+      }
+    }
+    </script>
+
+    <!-- ============================================
+         JSON-LD · Service principal (Salto Tándem)
+         PRECIOS: espejo del catálogo vivo del panel (sep 2026). Si el
+         cliente cambia precios en el panel, actualizar aquí y en los
+         fallbacks de src (lib/firebase.js, pages/Landing, pages/Reservar).
+         ============================================ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "Paracaidismo Tándem",
+      "provider": { "@id": "https://condorsky.co/#business" },
+      "name": "Salto Tándem de Paracaidismo",
+      "description": "Salto tándem con instructor certificado USPA. Incluye equipo de seguridad, inducción, vuelo en avioneta, salto y aterrizaje asistido.",
+      "areaServed": ["Bogotá", "Cali", "Medellín", "Bucaramanga", "Santa Marta", "Colombia"],
+      "offers": {
+        "@type": "Offer",
+        "price": "299000",
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock",
+        "url": "https://condorsky.co/reservar"
+      }
+    }
+    </script>
+
+    <!-- ============================================
+         JSON-LD · Productos (4 paquetes)
+         ============================================ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Product",
+          "name": "Paquete Esencial — Condor Sky",
+          "description": "10 fotos digitales del salto tándem en alta resolución.",
+          "image": "https://condorsky.co/img/paq-esencial.jpg",
+          "brand": { "@type": "Brand", "name": "Condor Sky" },
+          "offers": {
+            "@type": "Offer",
+            "price": "75000",
+            "priceCurrency": "COP",
+            "availability": "https://schema.org/InStock",
+            "url": "https://condorsky.co/reservar"
+          }
+        },
+        {
+          "@type": "Product",
+          "name": "Paquete PLUS HD — Condor Sky",
+          "description": "Incluye todo lo del Esencial + tomas dentro del avión + caída libre y aterrizaje grabados.",
+          "image": "https://condorsky.co/img/paq-plus.jpg",
+          "brand": { "@type": "Brand", "name": "Condor Sky" },
+          "offers": {
+            "@type": "Offer",
+            "price": "110000",
+            "priceCurrency": "COP",
+            "availability": "https://schema.org/InStock",
+            "url": "https://condorsky.co/reservar"
+          }
+        },
+        {
+          "@type": "Product",
+          "name": "Paquete Pro Experience — Condor Sky",
+          "description": "Camarógrafo externo, 15 fotos HD extra, certificado digital y entrega prioritaria del material.",
+          "image": "https://condorsky.co/img/paq-pro.jpg",
+          "brand": { "@type": "Brand", "name": "Condor Sky" },
+          "offers": {
+            "@type": "Offer",
+            "price": "180000",
+            "priceCurrency": "COP",
+            "availability": "https://schema.org/InStock",
+            "url": "https://condorsky.co/reservar"
+          }
+        },
+        {
+          "@type": "Product",
+          "name": "Paquete Full Experience Pareja — Condor Sky",
+          "description": "Video cinematic grupal, tomas grupales, snacks y bebidas, recuerdo personalizado.",
+          "image": "https://condorsky.co/img/paq-trio.jpg",
+          "brand": { "@type": "Brand", "name": "Condor Sky" },
+          "offers": {
+            "@type": "Offer",
+            "price": "400000",
+            "priceCurrency": "COP",
+            "availability": "https://schema.org/InStock",
+            "url": "https://condorsky.co/reservar"
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- ============================================
+         JSON-LD · FAQPage (los FAQs del Landing)
+         ============================================ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Necesito experiencia previa para saltar?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No se requiere ninguna experiencia previa. En el salto tándem vas unido al pecho de un instructor certificado USPA que controla absolutamente todo: la posición, el paracaídas principal, el de reserva y el aterrizaje. Tu única tarea es disfrutar."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuáles son los requisitos físicos?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Debes tener mínimo 16 años (los menores de 18 saltan con autorización escrita de sus padres o tutores) y pesar menos de 100 kg. No se permite saltar con condiciones cardíacas no controladas, epilepsia activa, embarazo ni bajo efectos de alcohol o sustancias. Si tienes alguna condición médica específica, consúltanos antes de reservar."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuánto tiempo dura toda la experiencia?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "El día del salto dura aproximadamente 4 a 5 horas en total: ~1 hora de inducción y briefing de seguridad, ~45 min de vuelo en avioneta hasta la altura de salto (4.000 m), 60 segundos de caída libre, ~5 min de planeo bajo el paracaídas y el regreso."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿El transporte desde mi ciudad está incluido?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Los participantes deben llegar al aeropuerto por sus propios medios. Si desean, pueden agregar el adicional de transporte puerta a puerta: los recogemos en la dirección que nos indiquen, los llevamos al aeropuerto y, al finalizar la actividad, los regresamos a la ubicación indicada."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué ropa debo usar el día del salto?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ropa cómoda y deportiva: tenis con suela plana o zapatillas deportivas, pantalón largo o leggins y camiseta. Evita sandalias, tacones, faldas y ropa muy holgada. Nosotros te entregamos el overol de vuelo, casco, gafas y arnés. En temporadas frías lleva una chaqueta delgada."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Es apto si tengo miedo a las alturas?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "¡Absolutamente! Muchos de nuestros clientes saltan precisamente para superar ese miedo. La caída libre es tan intensa (alcanzas ~200 km/h en segundos) que la percepción de altura desaparece completamente. Tu instructor estará contigo en todo momento. Más del 90% de quienes saltan con miedo quieren repetirlo."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué pasa si el clima no es favorable?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "La seguridad es lo primero. Monitoreamos el clima en tiempo real con estaciones meteorológicas locales. Si las condiciones no son ideales, reagendamos sin ningún costo adicional y te avisamos con la mayor anticipación posible para que puedas ajustar tus planes."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Puedo llevar acompañantes que no salten?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "¡Por supuesto! Los acompañantes pueden estar en la pista, ver el despegue de la avioneta y presenciar el aterrizaje en vivo. Es una experiencia muy emocionante también para los espectadores."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cómo recibo el video y las fotos?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Recibirás un enlace digital (Google Drive o WeTransfer) con todo el material en alta resolución. El paquete Esencial se entrega en las primeras 24 horas. El Pro Experience y el Trío incluyen edición profesional y pueden tomar hasta 48 horas. El material es tuyo para siempre."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Puedo cambiar o cancelar mi fecha?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Puedes reagendar sin costo hasta 48 horas antes de tu salto programado. Cancelaciones con menos de 48h de anticipación retienen el 50% del valor como compensación por la operación ya preparada. En caso de cancelación por condiciones climáticas, el 100% del valor queda disponible para reagendar."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- ============================================
+         JSON-LD · BreadcrumbList (estructura del sitio)
+         ============================================ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inicio",
+          "item": "https://condorsky.co/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Reservar Salto",
+          "item": "https://condorsky.co/reservar"
+        }
+      ]
+    }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

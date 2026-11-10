@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+/* ============================================================
+   Vuela Club — sistema de color
+   Paleta "verde bosque y cielo": verde institucional vibrante +
+   verde oscuro nocturno + acentos esmeralda y detalles sutiles.
+   Uso en clases Tailwind: bg-brand, text-cielo, hover:bg-brand-hover,
+   bg-bruma, text-tinta, etc.
+
+     · brand        #008427  verde institucional — botones con texto
+                              blanco y texto de marca sobre fondos CLAROS.
+     · brand-hover  #00661e  hover/active del verde institucional.
+     · cielo        #34d399  esmeralda brillante — acentos y números
+                              sobre fondos OSCUROS.
+     · cielo-soft   #6ee7b7  esmeralda claro secundario.
+     · oro          #f5b841  dorado amanecer — destacados, estrellas.
+     · oro-deep     #96660a  dorado legible sobre claro (AA).
+   Oscuros: noche #03190b (secciones dark / bosque nocturno) ·
+            cumbre #052210 / #0a3818 (cards dark) · abismo #010c05 (footer).
+   Claros:  bruma #f2fbf4 (wash verde muy suave) · hielo #d5ebd8 (bordes).
+   Texto:   tinta #0a1f0f (sobre claro) · neblina #4a6652 (suave).
+   Semánticos reales (NO son marca): green WhatsApp #25D366,
+   amber, red, emerald de Tailwind.
+   ============================================================ */
+@theme {
+  --font-sans: 'Manrope', ui-sans-serif, system-ui, sans-serif;
+
+  --color-brand:       #008427;
+  --color-brand-hover: #00661e;
+  --color-cielo:       #34d399;
+  --color-cielo-soft:  #6ee7b7;
+  --color-oro:         #f5b841;
+  --color-oro-deep:    #96660a;
+
+  --color-noche:    #03190b;
+  --color-cumbre:   #052210;
+  --color-cumbre-2: #0a3818;
+  --color-abismo:   #010c05;
+
+  --color-bruma: #f2fbf4;
+  --color-hielo: #d5ebd8;
+
+  --color-tinta:   #0a1f0f;
+  --color-neblina: #4a6652;
+
+  --color-wa: #25d366;
+  --color-wa-deep: #128c4b;
+}
+
+/* Tipografía display (Space Grotesk). Ambas fuentes se cargan en index.html;
+   Manrope es el sans por defecto vía --font-sans (arriba). */
+.font-display { font-family: 'Space Grotesk', system-ui, sans-serif; letter-spacing: -0.02em; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
+}

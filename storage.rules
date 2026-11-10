@@ -1,0 +1,28 @@
+rules_version = '2';
+
+// ============================================================
+// Condor Sky — Reglas de Firebase Storage
+// Proyecto: caidalibre-prod
+//
+// Las imágenes del sitio (servicios, testimonios, galería) son
+// públicas de lectura. Solo un admin puede subir o borrar.
+// ============================================================
+
+service firebase.storage {
+  match /b/{bucket}/o {
+
+    function isAdmin() {
+      return request.auth != null && request.auth.token.admin == true;
+    }
+
+    // Imágenes de contenido — visibles para el sitio público.
+    match /servicios/{archivo}   { allow read: if true; allow write: if isAdmin(); }
+    match /testimonios/{archivo} { allow read: if true; allow write: if isAdmin(); }
+    match /galeria/{archivo}     { allow read: if true; allow write: if isAdmin(); }
+    match /sedes/{archivo}       { allow read: if true; allow write: if isAdmin(); }
+    match /general/{archivo}     { allow read: if true; allow write: if isAdmin(); }
+
+    // Cierre por defecto.
+    match /{allPaths=**} { allow read, write: if false; }
+  }
+}
