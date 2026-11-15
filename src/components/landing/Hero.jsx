@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Icono } from "../Iconos";
-import { useDoc } from "../hooks/useFirestore"; // O el hook que uses para leer un documento individual
+import { useDoc } from "../../hooks/useFirestore";// O el hook que uses para leer un documento individual
 
 export default function Hero({ precioIndividual, whatsappLink }) {
   const cop = (n) => "$" + Number(n).toLocaleString("es-CO");
