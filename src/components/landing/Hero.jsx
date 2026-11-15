@@ -1,30 +1,43 @@
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { doc, getDoc } from "firebase/firestore";
+import { db } from "../../lib/firebase";
 import { Icono } from "../Iconos";
-import { useDoc } from "../../hooks/useFirestore";// O el hook que uses para leer un documento individual
 
 export default function Hero({ precioIndividual, whatsappLink }) {
   const cop = (n) => "$" + Number(n).toLocaleString("es-CO");
 
-  // Leemos la configuración general (ej: documento "settings/general")
-  const { data: settings } = useDoc("settings", "general");
+  const [bgHeroImage, setBgHeroImage] = useState("/img/salto_derecha.webp");
 
-  // Usamos la imagen de Firestore si existe, de lo contrario la por defecto
-  const bgHeroImage = settings?.heroImage || "/img/salto_derecha.webp";
+  // Cargar la imagen personalizada desde Firestore al montar
+  useEffect(() => {
+    async function fetchHeroImage() {
+      try {
+        const snap = await getDoc(doc(db, "settings", "general"));
+        if (snap.exists() && snap.data().heroImage) {
+          setBgHeroImage(snap.data().heroImage);
+        }
+      } catch (err) {
+        console.error("Error al cargar la imagen de fondo del hero:", err);
+      }
+    }
+    fetchHeroImage();
+  }, []);
 
   return (
     <section id="top" className="relative flex min-h-screen items-center bg-[#03190b] px-4 pb-24 pt-36 text-white overflow-hidden">
-      {/* Imagen de fondo */}
+      {/* Imagen de fondo con alta opacidad para que se vea muy clara */}
       <img
         src={bgHeroImage}
         alt="Paracaidismo tándem Vuela Club"
         className="absolute inset-0 h-full w-full object-cover opacity-80 object-center"
       />
 
-      {/* Gradientes laterales */}
+      {/* Gradientes laterales muy sutiles para conservar la lectura sin apagar la foto */}
       <div className="absolute inset-0 bg-gradient-to-r from-[#03190b]/85 via-[#03190b]/40 to-transparent" />
       <div className="absolute inset-0 bg-gradient-to-t from-[#03190b]/90 via-transparent to-[#03190b]/60" />
 
-      {/* Luces y efectos */}
+      {/* Luces de fondo verdes de acento */}
       <div className="absolute top-1/4 -left-20 h-96 w-96 rounded-full bg-[#008427]/30 blur-[140px]" />
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:32px_32px]" />
 
