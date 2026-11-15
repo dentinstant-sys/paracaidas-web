@@ -27,11 +27,11 @@ export default function Hero({ precioIndividual, whatsappLink }) {
   return (
     <section id="top" className="relative flex min-h-screen items-center bg-[#03190b] px-4 pb-24 pt-36 text-white overflow-hidden">
       {/* Imagen de fondo con alta opacidad para que se vea muy clara */}
-      <img
-        src={bgHeroImage}
-        alt="Paracaidismo tándem Vuela Club"
-        className="absolute inset-0 h-full w-full object-cover opacity-80 object-center"
-      />
+    <img
+  src={bgHeroImage}
+  alt="Paracaidismo tándem Vuela Club"
+  className="absolute inset-0 h-full w-full object-cover object-[85%_25%] sm:object-center"
+/>
 
       {/* Gradientes laterales muy sutiles para conservar la lectura sin apagar la foto */}
       <div className="absolute inset-0 bg-gradient-to-r from-[#03190b]/85 via-[#03190b]/40 to-transparent" />
